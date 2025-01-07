@@ -1,0 +1,61 @@
+# front-end
+apiVersion: v1
+kind: Pod
+metadata:
+  name: front-end-app
+  namespace: default
+  labels:
+    role: front-end
+spec:
+  containers:
+  - name: front-end-app
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+
+---
+# back-end-api
+apiVersion: v1
+kind: Pod
+metadata:
+  name: back-end-api
+  namespace: default
+  labels:
+    role: back-end-api
+spec:
+  containers:
+  - name: back-end-api
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+---
+# admin-front-end
+apiVersion: v1
+kind: Pod
+metadata:
+  name: admin-front-end-app
+  namespace: default
+  labels:
+    role: admin-front-end
+spec:
+  containers:
+  - name: admin-front-end-app
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+
+---
+# admin-back-end-api
+apiVersion: v1
+kind: Pod
+metadata:
+  name: admin-back-end-api
+  namespace: default
+  labels:
+    role: admin-back-end-api
+spec:
+  containers:
+  - name: admin-back-end-api
+    image: nginx:latest
+    ports:
+    - containerPort: 80
